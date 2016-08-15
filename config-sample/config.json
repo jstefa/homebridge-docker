@@ -13,7 +13,7 @@
             "platform": "Wink",
             "name": "Wink",
             "client_id": "quirky_wink_android_app",
-            "client_secret": "YOUR_WINK_API_CLIENT_SECRET",
+            "client_secret": "e749124ad386a5a35c0ab554a4f2c045",
             "username": "your@email.com",
             "password": "WINK_PASSWORD"
         }
