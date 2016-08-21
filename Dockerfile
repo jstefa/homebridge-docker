@@ -21,14 +21,16 @@ RUN apt-get install -y curl wget git python build-essential make g++ libavahi-co
 RUN alias ll='ls -alG'
 
 ##################################################
-# Install homebridge                             #
+# Install homebridge  & homeassistant            #
 ##################################################
 
 RUN npm install -g homebridge --unsafe-perm
 
 # depending on your config.json you have to add your modules here!
-RUN npm install -g homebridge-wink --unsafe-perm
-RUN npm install -g homebridge-people --unsafe-perm
+RUN npm install -g homebridge-homeassistant --unsafe-perm
+
+RUN pip3 install homeassistant
+
 
 ##################################################
 # Start                                          #
@@ -40,4 +42,5 @@ RUN mkdir -p /var/run/dbus
 ADD image/run.sh /root/run.sh
 
 EXPOSE 5353 51826
+EXPOSE 8123 51827
 CMD ["/root/run.sh"]
